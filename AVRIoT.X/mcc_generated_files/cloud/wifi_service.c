@@ -206,7 +206,7 @@ bool wifi_connectToAp(uint8_t passed_wifi_creds)
 	
 	if(passed_wifi_creds == NEW_CREDENTIALS)
 	{
-		e=m2m_wifi_connect((char *)ssid, sizeof(ssid), atoi((char*)authType), (char *)pass, M2M_WIFI_CH_ALL);
+		e=m2m_wifi_connect(ssid, strlen(ssid), atoi(authType), pass, M2M_WIFI_CH_ALL);
 	}
 	else
 	{

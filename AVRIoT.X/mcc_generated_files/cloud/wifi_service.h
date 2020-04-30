@@ -31,7 +31,6 @@ SOFTWARE.
 #include <stdint.h>
 #include <stdbool.h>
 
-#define MAX_WIFI_CRED_LENGTH 31
 #define DEFAULT_CREDENTIALS 0
 #define NEW_CREDENTIALS     1
 #define WIFI_SOFT_AP  0
