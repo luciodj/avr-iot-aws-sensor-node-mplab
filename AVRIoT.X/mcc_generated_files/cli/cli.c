@@ -71,7 +71,7 @@ static bool commandTooLongFlag = false;
 
 const char * const cli_version_number             = "1.0";
 
-const char * const firmware_version_number        = "3.0.0";
+const char * const firmware_version_number        = "3.0.1";
 
 static void command_received(char *command_text);
 static void reset_cmd(char *pArg);
@@ -211,15 +211,15 @@ static void set_wifi_auth(char *ssid_pwd_auth)
     switch (params)
     {
         case WIFI_PARAMS_OPEN:
-                strncpy(ssid, credentials[0],MAX_WIFI_CREDENTIALS_LENGTH-1);
+                strncpy(ssid, credentials[0],M2M_MAX_SSID_LEN);
                 strcpy(pass, "\0");
                 strcpy(authType, "1");                
             break;
 
         case WIFI_PARAMS_PSK:
 		case WIFI_PARAMS_WEP:
-                strncpy(ssid, credentials[0],MAX_WIFI_CREDENTIALS_LENGTH-1);
-                strncpy(pass, credentials[1],MAX_WIFI_CREDENTIALS_LENGTH-1);
+                strncpy(ssid, credentials[0],M2M_MAX_SSID_LEN);
+                strncpy(pass, credentials[1],M2M_MAX_PSK_LEN);
                 sprintf(authType, "%d", params);                
             break;
             
